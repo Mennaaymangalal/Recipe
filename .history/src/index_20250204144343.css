@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities{
+    .container{
+        @apply mx-auto  py-8
+    }
+}
+
+.active-link {
+    width: fit-content;
+    border-left:  4px solid #f29724; /* Orange highlight */
+  }
+  .inactive-link {
+    border-left: 4px solid transparent;
+  }

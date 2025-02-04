@@ -1,0 +1,15 @@
+.nav-link{
+    color: white !important;
+    margin:  25px;
+}
+.nav-link:hover{
+    color: rgb(242 151 36) !important;
+}
+.active{
+    background-color: rgb(242 151 36) !important;    
+    border-radius: 4%;
+    padding: 10px 20px !important;
+}
+.active:hover{
+    color: white !important;
+}
