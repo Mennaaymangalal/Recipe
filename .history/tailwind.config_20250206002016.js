@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-
 const {heroui} = require("@heroui/react");
 export default {
   content: [
@@ -12,8 +11,8 @@ export default {
       colors: {
         orangeHighlight: 'rgb(242 151 36)',
         footerclr:'rgb(107 114 128)',
-        greadiaetto: '#c90519',
-        gradientfrom:'#F29724'
+        greadiantto: '#c90519',
+        grad
       },
       fontFamily: {
         pacifico: ['Pacifico', 'cursive'], 

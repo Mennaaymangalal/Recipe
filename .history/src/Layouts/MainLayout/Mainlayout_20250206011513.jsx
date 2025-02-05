@@ -1,0 +1,29 @@
+import React from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
+import NavbarComponent from '../../Component/NavbarComponent/NavbarComponent';
+import Footer from '../../Component/Footer/Footer';
+
+export default function MainLayout() {
+  return (
+    <>
+      <div className="flex flex-col h-screen">
+        {/* Main Content Section */}
+        <div className="flex flex-1 overflow-hidden">
+          {/* Sidebar */}
+          <NavbarComponent />
+
+          {/* Main Content */}
+          <div className="flex-1 bg-gray-100 p-6 overflow-y-auto">
+            <Outlet />
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="bg-white">
+          <Footer />
+        </div>
+      </div>
+    </>
+  );
+}
+

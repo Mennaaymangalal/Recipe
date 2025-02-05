@@ -14,12 +14,7 @@ export default function Meals() {
     { label: 'Lamb', value: 'lamb' },
     { label: 'Miscellaneous', value: 'miscellaneous' },
     { label: 'Pasta', value: 'pasta' },
-    // { label: 'Pork', value: 'pork' },
-    // { label: 'Seafood', value: 'Seafood' },
-    // { label: 'Side', value: 'side' },
-    // { label: 'Starter', value: 'Starter' },
-    // { label: 'Vegan', value: 'Vegan' },
-    // { label: 'Vegetarian', value: 'Vegetarian' },
+    { label: 'Pork', value: 'pork' },
   ];
 
   return (
@@ -27,10 +22,9 @@ export default function Meals() {
       <h1 className='text-4xl font-bold font-pacifico bg-gradient-to-r from-gradientfrom to-greadiaetto bg-clip-text text-transparent'>Learn, Cook, Eat Your Food</h1>
 
     
-    <div className="">
-        <div className="p-4 space-y-4">
+      <div className="p-4 space-y-4">
         {/* For Small Screens */}
-        <div className="md:hidden">
+        <div className="sm:hidden">
           <select className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
             {categories.map((category ,index) => (
               <option key={index} value={category.value}>
@@ -41,17 +35,23 @@ export default function Meals() {
         </div>
 
         {/* For Larger Screens */}
-        <div className="hidden md:flex sm:space-x-4">
+        <div className="hidden sm:flex sm:space-x-4">
           {categories.map((category,index) => (
-            <NavLink key={index} to={``}>
-              <Button className="px-4 py-2 border bg-transparent border-gray-400 text-gray-700 rounded-full hover:scale-105 hover:shadow-md hover:text-black font-semibold font-pacifico">
-                {category.label}
-              </Button>
-            </NavLink>
+            <NavLink key={index} 
+                 to={`/${category.value}`}
+            className={({ isActive }) =>
+              `px-4 py-2 border bg-transparent border-gray-400 text-gray-700 rounded-full font-semibold font-pacifico hover:scale-105 hover:shadow-md hover:text-black ${
+                isActive
+                  ? 'bg-black text-white' // Active styles
+                  : 'hover:bg-black hover:text-white' // Hover styles
+              }`
+            }
+          >
+            <Button>{category.label}</Button>
+          </NavLink>
           ))}
         </div>
       </div>
-    </div>
     </>   
   )
 }

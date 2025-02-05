@@ -16,7 +16,7 @@ export default {
         gradientfrom:'#F29724'
       },
       fontFamily: {
-        pacifico: ['Pacifico', 'cursive'], 
+        pacifico: 'Pacifico' 
       },
     },
   },
