@@ -20,7 +20,7 @@ export default function NavbarComponent() {
              className={({ isActive }) =>
               `px-4 py-2 rounded-md w-full block text-left  hover:scale-105 transition-all border border-gray-200 ${
                 isActive
-                  ? "bg-orangeHighlight text-white font-semibold shadow-lg"
+                  ? "bg-orangeHighlight text-white font-semibold"
                   : "hover:bg-transparent text-black font-semibold"
               }`
             }>
