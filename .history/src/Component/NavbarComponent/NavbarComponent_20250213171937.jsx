@@ -11,9 +11,9 @@ export default function NavbarComponent() {
   ]
   return (
     <>
-    <div className=" text-white sticky  top-10 p-4">
+    <div className=" text-white sticky top-10 w-5/6 p-4">
       <img src={logo} alt="" />
-      <div className="flex flex-col gap-6  align-middle pt-10">        
+      <div className="flex flex-col gap-6 align-middle pt-10">        
         {menuItems.map((item,index)=>{
           return <div key={index} className="">
             <NavLink to={item == "Meals" ? "/" : "/" + item.toLocaleLowerCase()}
