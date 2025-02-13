@@ -10,7 +10,7 @@ export default function Meals() {
     getAllMeals()
   },[])
   async function getAllMeals(){
-    const {data} = await axios.get("https://www.themealdb.com/api/json/v1/1/categories.php")
+    const {data} = await axios.get("https://www.themealdb.com/api/json/v1/1/random.php")
     setProduct(data.categories)
   }
 
