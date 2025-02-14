@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import img from '../../assets/pexels-valeriya-1639557.jpg'
 import axios from 'axios'
-import Categories from '../../Component/Categories/Categories'
 
 export default function Meals() {
    const [products , setProduct] = useState([])
@@ -68,8 +67,7 @@ export default function Meals() {
       <div className="mt-16 grid sm:grid-cols-2 px-4  lg:grid-cols-3 xl:grid-cols-4 gap-8 gap-y-28 justify-center mb-3 ">
         {
           products.map((product,index)=>{
-            return <Categories key={index} product={product}/>
-
+            return 
           })
         }
 

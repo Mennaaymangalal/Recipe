@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import img from '../../assets/pexels-valeriya-1639557.jpg'
 import axios from 'axios'
-import Categories from '../../Component/Categories/Categories'
 
 export default function Meals() {
    const [products , setProduct] = useState([])
@@ -68,8 +67,18 @@ export default function Meals() {
       <div className="mt-16 grid sm:grid-cols-2 px-4  lg:grid-cols-3 xl:grid-cols-4 gap-8 gap-y-28 justify-center mb-3 ">
         {
           products.map((product,index)=>{
-            return <Categories key={index} product={product}/>
-
+            return <div key={index} className=" group w-fit px-9  py-4 shadow-md bg-white rounded-3xl text-center hover:scale-x-105">
+            <div className="">
+              <img  src={product.strCategoryThumb} alt="" className='group-hover:rotate-360 transition-all duration-700 rounded-full w-40 h-40 shadow-2xl  -mt-20'/>
+            </div>
+            <div className="flex flex-col items-center ">
+              <h3 className=' pt-6 font-bold text-2xl font-pacifico'>{product.strCategory}</h3>
+              <h5 className=' pb-4 font-semibold text-xl font-pacifico text-green-500 line-clamp-1'>Japanise</h5>
+              <Button className='px-5 py-8 font-pacifico mb-6 bg-green-500 text-white text-lg font-bold rounded-full '>
+                <a href="" >View Recipe</a>
+              </Button>
+            </div>
+          </div>
           })
         }
 
