@@ -1,4 +1,7 @@
+import { Button } from '@heroui/react'
 import React, { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
+import img from '../../assets/pexels-valeriya-1639557.jpg'
 import axios from 'axios'
 import Categories from '../../Component/Categories/Categories'
 import ButtonLayout from '../../Component/ButtonLyaout/ButtonLayout'
@@ -13,7 +16,24 @@ export default function Meals() {
     setProduct(data.categories)
   }
 
- 
+  const categories = [
+    { label: 'All', value: 'all' },
+    { label: 'Beef', value: 'beef' },
+    { label: 'Breakfast', value: 'breakfast' },
+    { label: 'Chicken', value: 'chicken' },
+    { label: 'Dessert', value: 'dessert' },
+    { label: 'Goat', value: 'goat' },
+    { label: 'Lamb', value: 'lamb' },
+    { label: 'Miscellaneous', value: 'miscellaneous' },
+    { label: 'Pasta', value: 'pasta' },
+    { label: 'Pork', value: 'pork' },
+    { label: 'Seafood', value: 'Seafood' },
+    { label: 'Side', value: 'side' },
+    { label: 'Starter', value: 'Starter' },
+    { label: 'Vegan', value: 'Vegan' },
+    { label: 'Vegetarian', value: 'Vegetarian' },
+  ];
+
   return (
     <>
         {/* Button Layout */}
