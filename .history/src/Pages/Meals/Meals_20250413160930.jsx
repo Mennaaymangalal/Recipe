@@ -8,17 +8,15 @@ export default function Meals() {
   useEffect(()=>{
     getAllMeals()
   },[])
-  const getAllMeals = async () => {
+  const fetchRandomMeal = async () => {
     try {
-      const mealPromises = Array.from({ length: 25 }, () =>
-        axios.get('https://www.themealdb.com/api/json/v1/1/random.php')
+      const { data } = await axios.get(
+        'https://www.themealdb.com/api/json/v1/1/random.php'
       );
-  
-      const results = await Promise.all(mealPromises);
-      const meals = results.map(res => res.data.meals[0]);
-      setProduct(meals);
-    } catch (err) {
-      console.error('Error fetching multiple meals:', err);
+      setProduct(data.meals[0]);
+      console.log() // ✅ Access the first meal in the array
+    } catch (error) {
+      console.error('Failed to fetch random meal:', error);
     }
   };
  
@@ -30,7 +28,7 @@ export default function Meals() {
       {/* Categories Layout */}
       <div className="mt-16 grid sm:grid-cols-2 px-4  lg:grid-cols-3 xl:grid-cols-4 gap-8 gap-y-28 justify-center mb-3 ">
         {
-          products?.map((product,index)=>{
+          products.map((product,index)=>{
             return <Categories key={index} product={product}/>
 
           })

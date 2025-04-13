@@ -8,9 +8,9 @@ export default function Meals() {
   useEffect(()=>{
     getAllMeals()
   },[])
-  const getAllMeals = async () => {
+  const getMultipleRandomMeals = async () => {
     try {
-      const mealPromises = Array.from({ length: 25 }, () =>
+      const mealPromises = Array.from({ length: 5 }, () =>
         axios.get('https://www.themealdb.com/api/json/v1/1/random.php')
       );
   

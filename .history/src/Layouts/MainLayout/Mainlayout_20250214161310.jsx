@@ -23,7 +23,7 @@ export default function Mainlayout() {
     </div>  */}
  
     <div className="grid grid-cols-1 sm:grid-cols-4">
-        <div className="md:col-span-1 px-4 sm:col-span-4 sm:pb-20">
+        <div className="md:col-span-1 px-4 pe-4 sm:col-span-4 sm:pb-20">
         <NavbarComponent/>       
         </div>
         <div className="md:col-span-3 p-6 sm:col-span-4  bg-gray-100">

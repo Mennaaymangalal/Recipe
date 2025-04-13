@@ -10,7 +10,7 @@ export default function Meals() {
   },[])
   const getAllMeals = async () => {
     try {
-      const mealPromises = Array.from({ length: 25 }, () =>
+      const mealPromises = Array.from({ length: 20 }, () =>
         axios.get('https://www.themealdb.com/api/json/v1/1/random.php')
       );
   

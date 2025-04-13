@@ -8,17 +8,15 @@ export default function Meals() {
   useEffect(()=>{
     getAllMeals()
   },[])
-  const getAllMeals = async () => {
+  const fetchRandomMeal = async () => {
     try {
-      const mealPromises = Array.from({ length: 25 }, () =>
-        axios.get('https://www.themealdb.com/api/json/v1/1/random.php')
+      const { data } = await axios.get(
+        'https://www.themealdb.com/api/json/v1/1/random.php'
       );
-  
-      const results = await Promise.all(mealPromises);
-      const meals = results.map(res => res.data.meals[0]);
-      setProduct(meals);
-    } catch (err) {
-      console.error('Error fetching multiple meals:', err);
+      setProduct(data.meals[0]);
+      console.log(data.meals[0]) 
+    } catch (error) {
+      console.error('Failed to fetch random meal:', error);
     }
   };
  

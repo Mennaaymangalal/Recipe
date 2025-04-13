@@ -4,23 +4,15 @@ import Categories from '../../Component/Categories/Categories'
 import ButtonLayout from '../../Component/ButtonLyaout/ButtonLayout'
 
 export default function Meals() {
-   const [products , setProduct] = useState(null)
+   const [products , setProduct] = useState([])
   useEffect(()=>{
     getAllMeals()
   },[])
-  const getAllMeals = async () => {
-    try {
-      const mealPromises = Array.from({ length: 25 }, () =>
-        axios.get('https://www.themealdb.com/api/json/v1/1/random.php')
-      );
-  
-      const results = await Promise.all(mealPromises);
-      const meals = results.map(res => res.data.meals[0]);
-      setProduct(meals);
-    } catch (err) {
-      console.error('Error fetching multiple meals:', err);
-    }
-  };
+  async function getAllMeals(){
+    const {data} = await axios.get("https://www.themealdb.com/api/json/v1/1/random.php")
+    console.log(data.meals)
+  }
+
  
   return (
     <>
@@ -30,7 +22,7 @@ export default function Meals() {
       {/* Categories Layout */}
       <div className="mt-16 grid sm:grid-cols-2 px-4  lg:grid-cols-3 xl:grid-cols-4 gap-8 gap-y-28 justify-center mb-3 ">
         {
-          products?.map((product,index)=>{
+          products.map((product,index)=>{
             return <Categories key={index} product={product}/>
 
           })
