@@ -1,11 +1,11 @@
 import React from 'react'
 import img from '../../assets/pexels-valeriya-1639557.jpg'
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Button } from '@heroui/react';
 
 export default function ButtonLayout() {
      const categories = [
-        { label: 'All', value: 'all' },
+        { label: 'All', value: '' },
         { label: 'Beef', value: 'beef' },
         { label: 'Breakfast', value: 'breakfast' },
         { label: 'Chicken', value: 'chicken' },
@@ -32,11 +32,13 @@ export default function ButtonLayout() {
         {/* Category Selection for Small Screens */}
         <div className="md:hidden flex justify-center">
           <select className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            
             {categories.map((category, index) => (
-              <option key={index} value={category.value}>
+              <Link to={category.value === '' ? '/' : `/${category.value.toLowerCase()}`} key={index} value={category.value}>
                 {category.label}
-              </option>
+              </Link>
             ))}
+                  
           </select>
         </div>
 
